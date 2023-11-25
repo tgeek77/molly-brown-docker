@@ -11,9 +11,9 @@ RUN mkdir -p "/srv/gemini/"
 RUN go install tildegit.org/solderpunk/molly-brown@latest
 RUN mv /root/go/bin/molly-brown /usr/local/bin
 
-COPY molly.conf /etc/
-COPY cert.pem /
-COPY key.pem /
+COPY ../molly.conf /etc/
+COPY ../certs/cert.pem /
+COPY ../cert/key.pem /
 
 CMD /usr/local/bin/molly-brown -c /etc/molly.conf
 
